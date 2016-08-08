@@ -37,3 +37,5 @@ config.js
 .idea/modules.xml
 .idea/sample-angular-node.iml
 .idea/workspace.xml
+/config.sample.js
+/screenshot.png

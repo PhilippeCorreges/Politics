@@ -7,31 +7,46 @@
   angular
   .module('com.module.core')
   .config(function($stateProvider, $urlRouterProvider) {
+
+    $urlRouterProvider.otherwise('/');
+
     $stateProvider
-      .state('home', {
-        url: '/home',
-        templateUrl: 'modules/core/partial-home.html'
+
+      .state('presentation', {
+        views: {
+          'header':{
+            template:'header <hr />'
+          },
+          'content': {
+            template: '<div ui-view></div>',
+            url: '/presentation',
+            templateUrl: 'modules/core/views/partial-home.html'
+          },
+          'footer': {
+            template: '<hr /> footer'
+          }
+        },
+
       })
 
       // nested list with custom controller
-      .state('home.liste', {
+      .state('presentation.liste', {
         url: '/liste',
-        templateUrl: 'modules/core/partial-home-list.html',
+        templateUrl: 'modules/persons/views/persons-list.html',
 
       })
 
       // nested list with just some random string data
-      .state('home.statistiques', {
+      .state('presentation.statistiques', {
         url: '/statistiques',
-        templateUrl: 'statistiques.html'
+        templateUrl: 'modules/statistics/views/statistiques.html'
       })
 
       // Fillon PAGE AND MULTIPLE NAMED VIEWS =================================
       .state('fillon', {
         url: '/fillon',
-        templateUrl: 'fillon.html'
-        // we'll get to this in a bit
+        templateUrl: 'modules/twitter/views/fillon.html',
+        controller:'TwitCtrl'
       });
-        $urlRouterProvider.otherwise('/home');
 });
 })();

@@ -14,6 +14,8 @@
    * the models exposed by the LoopBack server via the REST API.
    *
    */
-  angular.module('com.module.core', []);
-
+  angular.module('com.module.core',['ui.router'])
+      .config(["$locationProvider", function($locationProvider) {
+        $locationProvider.html5Mode(true);
+      }]);
 })();

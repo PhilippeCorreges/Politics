@@ -5,9 +5,10 @@
       .module('com.module.persons')
       .controller('PersonsCtrl', function($scope) {
         $scope.politics = [
-          { nom: 'François Fillon', lien :'/fillon', twitter: 'FrancoisFillon' },
-          { nom: 'Nicolas Sarkozy', lien :'', twitter: '' },
-          { nom: 'Jean-Luc Mélenchon', lien :'', twitter: '' }]
+          { nom: 'François Fillon', twitterId: 'FrancoisFillon' },
+          { nom: 'Nicolas Sarkozy', twitterId: 'NicolasSarkozy' },
+          { nom: 'Jean-Luc Mélenchon', twitterId: 'JLMélenchon' },
+          { nom: 'François Hollande', twitterId: 'fhollande' }]
       });
 
 

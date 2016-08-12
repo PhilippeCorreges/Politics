@@ -14,7 +14,7 @@
    **/
 angular
     .module('com.module.twitter', ['ngResource', 'ngSanitize'])
-    .controller('TwitCtrl', function($scope, $resource, $timeout) {
+    .controller('TwitCtrl', function($scope, $resource, $timeout, $stateParams) {
 
     /**
      * init controller and set defaults
@@ -22,7 +22,7 @@ angular
     function init () {
 
       // set a default username value
-      $scope.username = "FrancoisFillon";
+      $scope.username = $stateParams.twitterId;
       
       // empty tweet model
       $scope.tweetsResult = [];

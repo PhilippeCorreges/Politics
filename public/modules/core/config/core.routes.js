@@ -13,20 +13,8 @@
     $stateProvider
 
       .state('presentation', {
-        views: {
-          'header':{
-            template:'header <hr />'
-          },
-          'content': {
-            template: '<div ui-view></div>',
-            url: '/presentation',
-            templateUrl: 'modules/core/views/partial-home.html'
-          },
-          'footer': {
-            template: '<hr /> footer'
-          }
-        },
-
+        url: '/presentation',
+        templateUrl: 'modules/core/views/partial-home.html'
       })
 
       // nested list with custom controller
@@ -43,10 +31,10 @@
       })
 
       // Fillon PAGE AND MULTIPLE NAMED VIEWS =================================
-      .state('fillon', {
-        url: '/fillon',
-        templateUrl: 'modules/twitter/views/fillon.html',
+      .state('twits', {
+        url: '/viewTwits/:twitterId',
+        templateUrl: 'modules/twitter/views/twitsView.html',
         controller:'TwitCtrl'
-      });
+        });
 });
 })();
